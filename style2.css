@@ -47,7 +47,7 @@ div#datos-unicos-circles-bordered{  display: flex;  justify-content: space-aroun
     z-index: 6;
   }
 @property --step{
-  syntax: '<number>';
+  syntax: '<integer>';
   inherits: true;
   initial-value: 0;
 }
