@@ -1,3 +1,31 @@
+@property --step{
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 0;
+}
+@property --value {
+  syntax: '<integer>';
+  initial-value: 0;
+  inherits: true;
+}
+
+@keyframes step {
+  from {--step: 0; }
+}
+@keyframes setValue {
+  from {--value: 0; }
+}
+/* .spinner-value span{--num: var(--step)} */
+
+.spinner-value span, .valor2 span{
+
+  animation: setValue  1s .5s linear;
+  counter-set: value var(--value);
+}
+.spinner-value span:after, .valor2 span:before{
+  content: counter(value);
+}
+
 :root{
   --color-1: rgb(247 197 196);
   --color-2: rgb(240 143 143) ;
@@ -46,40 +74,8 @@ div#datos-unicos-circles-bordered{  display: flex;  justify-content: space-aroun
   .circles span {
     z-index: 6;
   }
-@property --step{
-  syntax: '<integer>';
-  inherits: true;
-  initial-value: 0;
-}
-@property --num {
-  syntax: "<integer>";
-  initial-value: 0;
-  inherits: false;
-}
-
-@keyframes step {
-  from {--step: 0; }
-}
-
-/* .spinner-value span{--num: var(--step)} */
-
-.spinner-value span, .valor2 span{
-  counter-set: step var(--step);
-}
-.spinner-value span:after, .valor2 span:before{
-  content: counter(step);
-}
 
 
-#spinner-test .spinner-value span{--num: var(--step);}
-#spinner-test .spinner-value span{
-  transition: --num .5s linear;
-  counter-set: num var(--num);
-}
-
-#spinner-test .spinner-value span:after {
-  content: counter(num);
-} 
 
 .spinner-block,
 .spinner { position: relative;}

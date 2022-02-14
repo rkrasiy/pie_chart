@@ -10,127 +10,122 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./style2.css">
+    <link rel="stylesheet" type="text/css" href="./global.css">
+
 </head>
 
 <body id="main">
     <div class="ui container fila" data-id="3" style="padding: 1rem;">
         <h1>Graficas</h1>
     </div>
-    <div class="spinner-2" style="position:relative;--step:90;">
+    <div class="grid">
+           <div class="spinner-2" style="position:relative;--step:75;--value:75;">
         <div style="width: 100%;min-height: 35px;background:linear-gradient(90deg, #fda403,#e8751a,#c51350,#8a1253)"></div>
         <div style="position:absolute;top:0;bottom:0;left:0;width:100%; animation: step 1s .5s both;background:linear-gradient(90deg, rgb(0 0 0 / 30%) calc(var(--step)*1%), transparent 0);">
-            <div class="spinner-value" style="position:absolute;top:50%;left:50%;color: #fff;transform: translate(-50%,-50%);"><span></span>%</div>
+            <div class="spinner-value" style="position:absolute;top:50%;left:50%;color: #fff;transform: translate(-50%,-50%);">
+                <span></span>%
+            </div>
         </div>
     </div>
-    <p style="margin: 2em"></p>
-    <div id="spinner-test" style="display: flex; flex-direction: column;justify-content: end;position:relative;--step:39;">
+    <div id="spinner-test" style="display: flex; flex-direction: column;justify-content: end;position:relative;--step:39;--value:39;">
         <div style="height: 35px; width:100%; animation: step 1s .5s both;background:linear-gradient(90deg, rgb(118, 182, 118) calc(var(--step)*1%), #ddd 0);">
             <div class="spinner-value" style="position:absolute;top:50%;left:50%;transform: translate(-50%,-50%);"><span></span>%</div>
         </div>
         <div style="width: 100%;height: 10px;background:linear-gradient(90deg, #fda403,#e8751a, #c51350,#8a1253)"></div>
     </div>
-    <p style="margin: 2em"></p>
-    <div class="spinner-2" style="position:relative;--step:59;">
+    <div class="spinner-2" style="position:relative;--step:59;--value:59;">
         <div style="width: 100%;min-height: 35px;background:linear-gradient(90deg, #fda403 0, #fda403 25%,#e8751a 25%,#e8751a 50%, #c51350 50%,#c51350 75%, #8a1253 75%)"></div>
         <div style="position:absolute;top:0;bottom:0;left:0;width:100%; animation: step 1s .5s both;background:linear-gradient(90deg, rgb(0 0 0 / 30%) calc(var(--step)*1%), transparent 0);">
             <div class="spinner-value" style="position:absolute;top:50%;left:50%;color: #fff;transform: translate(-50%,-50%);"><span></span>%</div>
         </div>
     </div>
-    <p style="margin: 2em"></p>
-    <div style="display: flex; flex-direction: column;justify-content: end;position:relative;--step:39;">
+    <div style="display: flex; flex-direction: column;justify-content: end;position:relative;--step:39;--value:39;">
         <div style="height: 35px; width:100%; animation: step 1s .5s both;background:linear-gradient(90deg, rgb(118, 182, 118) calc(var(--step)*1%), #ddd 0);">
-            <div style="position:absolute;top:50%;left:50%;transform: translate(-50%,-50%);">39%</div>
+            <div class="spinner-value" style="position:absolute;top:50%;left:50%;color: #fff;transform: translate(-50%,-50%);"><span></span>%</div>
         </div>
         <div style="width: 100%;height: 10px;background:linear-gradient(90deg, #fda403 0, #fda403 25%,#e8751a 25%,#e8751a 50%, #c51350 50%,#c51350 75%, #8a1253 75%)"></div>
     </div>
-
-    <div class="ui container" data-id="9" style="padding: 1rem;display: flex;">
-        <div class="datos-unicos-block column half-donuts" data-id="10" style="padding: 1rem;--step:60;--b:20px;--c: var(--spinner);--c2: #ddd;">
-            <div class="description" data-id="12" style="padding: 0em;"><span>Transparencia</span></div>
+        <div class="half-donuts" data-id="10" style="padding: 1rem;--step:60;--b:20px;--c: var(--spinner);--c2: #ddd;--value:60;">
             <div class="spinner-block" data-id="14" style="padding: 0em;">
                 <div class="spinner" data-id="24" style="padding: 0em;"></div>
-                <div class="valor2" data-id="26" style="padding: 0em;"><span>%</span></div>
+                <div class="valor2" data-id="26" style="padding: 0em;">
+                    <span>%</span>
+                </div>
             </div>
-            <div class="title" data-id="15" style="padding: 0em;"><span>Despesa per habitant</span></div>
         </div>
-        <div class="datos-unicos-block column half-donuts" data-id="170" style="padding: 1rem;--step:30;--b:20px;--c: var(--spinner);--c2: #ddd;">
-            <div class="description" data-id="12" style="padding: 0em;"><span>Portal Transparencia</span></div>
+        <div class="half-donuts" data-id="170" style="padding: 1rem;--step:30;--b:20px;--c: var(--spinner);--c2: #ddd;--value:30;">
             <div class="spinner-block" data-id="14" style="padding: 0em;">
                 <div class="spinner" data-id="24" style="padding: 0em;"></div>
-                <div class="valor2" data-id="26" style="padding: 0em;"><span>%</span></div>
+                <div class="valor2" data-id="26" style="padding: 0em;">
+                    <span>%</span>
+                </div>
             </div>
-            <div class="title" data-id="15" style="padding: 0em;"><span>Ingreso por habitante</span></div>
         </div>
-        <div class="datos-unicos-block column half-donuts" data-id="180" style="padding: 1rem;--step:75;--b:20px;--c: var(--spinner);--c2: #ddd;">
-            <div class="description" data-id="12" style="padding: 0em;"><span>Participación ciudadana</span></div>
+        <div class="half-donuts" data-id="180" style="padding: 1rem;--step:75;--b:20px;--c: var(--spinner);--c2: #ddd;--value:75;">
             <div class="spinner-block" data-id="14" style="padding: 0em;">
                 <div class="spinner" data-id="24" style="padding: 0em;"></div>
-                <div class="valor2" data-id="26" style="padding: 0em;"><span>%</span></div>
+                <div class="valor2" data-id="26" style="padding: 0em;">
+                    <span>%</span>
+                </div>
             </div>
-            <div class="title" data-id="15" style="padding: 0em;"><span>Presupuesto 2021</span></div>
         </div>
-        <div class="datos-unicos-block column half-donuts frustrated" data-id="236" style="padding: 1rem;--step:40;--b:20px;--c: var(--spinner);--c2: #ddd;">
-            <div class="description" data-id="12" style="padding: 0em;"><span>Puntuación Total</span></div>
+        <div class="half-donuts split" data-id="236" style="padding: 1rem;--step:40;--b:20px;--c:var(--spinner);--c2:#ddd;--value:40;">
             <div class="spinner-block" data-id="14" style="padding: 0em;">
                 <div class="spinner" data-id="24" style="padding: 0em;"></div>
-                <div class="valor2" data-id="26" style="padding: 0em;"><span></span></div>
+                <div class="valor2" data-id="26" style="padding: 0em;">
+                    <span></span>
+                </div>
             </div>
             <div class="blocks" data-id="24" style="padding: 0em;">
-                <span>0-25</span><span>26-50</span><span>51-75</span><span>76-100</span></div>
+                <span>0-25</span>
+                <span>26-50</span>
+                <span>51-75</span>
+                <span>76-100</span>
+            </div>
         </div>
-    </div>
-
-
-    <div class="ui container" id="datos-unicos-circles" data-id="4271" style="padding: 30px 1rem;display: flex;">
         <div class="cirlces-block column" data-id="10" style="padding: 1rem;">
-            <div class="description" data-id="12" style="padding: 0em;"><span>Transparencia</span></div>
-            <div class="circles circles-fill valor2" data-id="4319" style="padding: 0em;--step:60;--b:10px;--c: var(--spinner);">
-                <span>%</span></div>
-            <div class="title" data-id="15" style="padding: 0em;"><span>Despesa per habitant</span></div>
+            <div class="circles circles-fill valor2" data-id="4319" style="padding: 0em;--step:60;--b:10px;--c: var(--spinner);--value:60;">
+                <span>%</span>
+            </div>
         </div>
         <div class="cirlces-block column" data-id="170" style="padding: 1rem;">
-            <div class="description" data-id="12" style="padding: 0em;"><span>Portal Transparencia</span></div>
-            <div class="circles circles-fill valor2" data-id="4319" style="padding: 0em;--step:87;--b:10px;--c:var(--spinner);">
-                <span>%</span></div>
-            <div class="title" data-id="15" style="padding: 0em;"><span>Ingreso por habitante</span></div>
+            <div class="circles circles-fill valor2" data-id="4319" style="padding: 0em;--step:100;--b:10px;--c:var(--spinner);--value:100;">
+                <span>%</span>
+            </div>
         </div>
         <div class="cirlces-block column" data-id="180" style="padding: 1rem;">
-            <div class="description" data-id="12" style="padding: 0em;"><span>Participación ciudadana</span></div>
-            <div class="circles circles-fill valor2" data-id="4319" style="padding: 0em;--step:20;--b:10px;--c:var(--spinner);">
-                <span>%</span></div>
-            <div class="title" data-id="15" style="padding: 0em;"><span>Presupuesto 2021</span></div>
+            <div class="circles circles-fill valor2" data-id="4319" style="padding: 0em;--step:20;--b:10px;--c:var(--spinner);--value:20;">
+                <span>%</span>
+            </div>
         </div>
         <div class="cirlces-block column" data-id="236" style="padding: 1rem;">
-            <div class="description" data-id="12" style="padding: 0em;"><span>Puntuación Total</span></div>
-            <div class="circles circles-fill valor2" data-id="4319" style="padding: 0em;--step:15;--b:10px;--c:var(--spinner);">
-                <span>%</span></div>
-            <div class="title" data-id="15" style="padding: 0em;"><span>Presupuesto 2021</span></div>
+            <div class="circles circles-fill valor2" data-id="4319" style="padding: 0em;--step:15;--b:10px;--c:var(--spinner);--value:15;">
+                <span>%</span>
+            </div>
         </div>
-    </div>
-    <div class="ui container" id="datos-unicos-circles-bordered" data-id="5942" style="padding: 30px 1rem; display: flex;">
         <div class="cirlces-block column" data-id="10" style="padding: 1rem;">
-            <div class="description" data-id="12" style="padding: 0em;"><span>Transparencia</span></div>
             <div class="circles circles-bordered valor2" data-id="4319"
-                style="padding: 0em;--step:60;--b:10px;--c: var(--spinner);"><span>%</span></div>
-            <div class="title" data-id="15" style="padding: 0em;"><span>Despesa per habitant</span></div>
+                style="padding: 0em;--step:60;--b:10px;--c: var(--spinner);--value:60;">
+                <span>%</span>
+            </div>
         </div>
         <div class="cirlces-block column" data-id="170" style="padding: 1rem;">
-            <div class="description" data-id="12" style="padding: 0em;"><span>Portal Transparencia</span></div>
             <div class="circles circles-bordered valor2" data-id="4319"
-                style="padding: 0em;--step:87;--b:10px;--c:var(--spinner);"><span>%</span></div>
-            <div class="title" data-id="15" style="padding: 0em;"><span>Ingreso por habitante</span></div>
+                style="padding: 0em;--step:88;--b:10px;--c:var(--spinner);--value:88;">
+                <span>%</span>
+            </div>
         </div>
         <div class="cirlces-block column" data-id="180" style="padding: 1rem;">
-            <div class="description" data-id="12" style="padding: 0em;"><span>Participación ciudadana</span></div>
             <div class="circles circles-bordered valor2" data-id="4319"
-                style="padding: 0em;--step:20;--b:10px;--c:var(--spinner);"><span>%</span></div>
-            <div class="title" data-id="15" style="padding: 0em;"><span>Presupuesto 2021</span></div>
-        </div>
+                style="padding: 0em;--step:20;--b:10px;--c:var(--spinner);--value:20;">
+                <span>%</span>
+            </div>
+           </div>
         <div class="cirlces-block column" data-id="236" style="padding: 1rem;">
-            <div class="description" data-id="12" style="padding: 0em;"><span>Puntuación Total</span></div>
             <div class="circles circles-bordered valor2" data-id="4319"
-                style="padding: 0em;--step:15;--b:10px;--c:var(--spinner);"><span>%</span></div>
-            <div class="title" data-id="15" style="padding: 0em;"><span>Presupuesto 2021</span></div>
+                style="padding: 0em;--step:15;--b:10px;--c:var(--spinner);--value:15;">
+                <span>%</span>
+            </div>
         </div>
     </div>
 
