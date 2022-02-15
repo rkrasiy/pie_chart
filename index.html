@@ -2,175 +2,194 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charts</title>
-    <link rel="stylesheet" type="text/css" href="./style.css">
-    <link rel="stylesheet" type="text/css" href="./global.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charts</title>
+  <link rel="stylesheet" type="text/css" href="./style.css">
+  <style>
+    .grid {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
+    .grid>div {
+      flex: 0 0 19%;
+      margin: 1rem 5px;
+    }
+  </style>
 </head>
 
 <body id="main">
-    <div>
-        <ul>
-            <li><a href="index.html">V1</a></li>
-            <li><a href="charts2.html">V2</a></li>
-            <li><a href="charts3.html">V3</a></li>
-        </ul>
-    </div>
-    <div class="grid">
-        <div class="chart straight" style="--step:6;--value:6;max-height: 35px;">
-            <div class="spinner-block">
-                <div class="spinner"></div>
-                <div class="valor">
-                    <span>%</span>
-                </div>
-            </div>
+  <div class="grid">
+    <div class="chart straight" style="--step:36;--value:36;max-height: 35px;">
+      <div class="spinner-block">
+        <div class="spinner"></div>
+        <div class="valor">
+          <span>%</span>
         </div>
-            <div class="chart straight" style="--step:16;--value:16;max-height: 35px;">
-                <div class="spinner-block">
-                    <div class="spinner"></div>
-                    <div class="valor">
-                        <span>%</span>
-                    </div>
-                </div>
-            </div>
-    <div class="chart straight" style="--step:30;--value:30;max-height: 35px;">
-        <div class="spinner-block">
-            <div class="spinner"></div>
-            <div class="valor">
-                <span>%</span>
-            </div>
-        </div>
+      </div>
     </div>
     <div class="chart straight split" style="--step:20;--value:20;max-height: 35px;">
-        <div class="spinner-block">
-            <div class="spinner"></div>
-            <div class="valor">
-                <span>%</span>
-            </div>
+      <div class="spinner-block">
+        <div class="spinner"></div>
+        <div class="valor">
+          <span>%</span>
         </div>
-    </div>
-    <div class="chart straight split" style="--step:80;--value:80;max-height: 35px;">
-        <div class="spinner-block">
-            <div class="spinner"></div>
-            <div class="valor">
-                <span>%</span>
-            </div>
-        </div>
+      </div>
     </div>
     <div class="chart straight split pointer-chart" style="--step:60;--value:60;max-height: 35px;">
-        <div class="spinner-block">
-            <div class="spinner"></div>
-            <div class="valor">
-                <span>%</span>
-            </div>
+      <div class="spinner-block">
+        <div class="spinner"></div>
+        <div class="valor">
+          <span>%</span>
         </div>
+      </div>
     </div>
     <div class="chart straight split pointer-chart top" style="--step:60;--value:60;max-height: 35px;">
-        <div class="spinner-block">
-            <div class="spinner"></div>
-            <div class="valor">
-                <span>%</span>
-            </div>
+      <div class="spinner-block">
+        <div class="spinner"></div>
+        <div class="valor">
+          <span>%</span>
         </div>
+      </div>
     </div>
     <div class="chart straight split pointer-chart bottom" style="--step:60;--value:60;max-height: 35px;">
+      <div class="spinner-block">
+        <div class="spinner"></div>
+        <div class="valor">
+          <span>%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="chart donuts half-donuts"
+      style="padding: 0rem;--step:75;--value:75;--b:20px;--c: var(--spinner);--c2: #ddd;">
+      <div class="spinner-block">
+        <div class="spinner"></div>
+        <div class="valor">
+          <span></span>
+        </div>
+      </div>
+    </div>
+    <div class="chart donuts half-donuts split"
+      style="padding: 0rem;--step:40;--value:40;--b:20px;--c:var(--spinner);--c2:#ddd;">
+      <div class="spinner-block">
+        <div class="spinner"></div>
+        <div class="valor">
+          <span></span>
+        </div>
+      </div>
+      <div class="blocks">
+        <span>0-25</span>
+        <span>26-50</span>
+        <span>51-75</span>
+        <span>76-100</span>
+      </div>
+    </div>
+    <div class="chart donuts split" style="--step:60;--value:60;--b:20px;--c: var(--spinner);">
+      <div class="spinner-block">
+        <div class="spinner"></div>
+        <div class="valor"><span>%</span>
+        </div>
+      </div>
+    </div>
+    <div class="chart donuts donuts-fill" style="--step:52;--value:52;--b:10px;--c: var(--spinner);">
+      <div class="spinner-block">
+        <div class="spinner"></div>
+        <div class="valor"><span>%</span></div>
+      </div>
+    </div>
+
+    <div class="chart donuts donuts-thin" style="--step:60;--value:60;--b:10px;--c: var(--spinner);">
+      <div class="spinner-block">
+        <div class="spinner"></div>
+        <div class="valor"><span>%</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="charts simple">
+      <div class="chart donuts donuts-thin" style="--step:60;--b:16px;--c: var(--spinner);">
         <div class="spinner-block">
-            <div class="spinner"></div>
-            <div class="valor">
-                <span>%</span>
+          <div class="spinner"></div>
+          <div class="chart donuts donuts-thin" style="--step:90;--c:blue;">
+            <div class="spinner-block">
+              <div class="spinner"></div>
+              <div class="chart donuts donuts-thin" style="--step:48;--c:red;">
+                <div class="spinner-block">
+                  <div class="spinner"></div>
+                  <div class="chart donuts donuts-thin" style="--step:78;--c:rgb(54, 8, 8);">
+                    <div class="spinner-block">
+                      <div class="spinner"></div>
+                      <div class="chart donuts donuts-thin" style="--step:15;--c:rgb(77, 77, 77);">
+                        <div class="spinner-block">
+                          <div class="spinner"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-        <div class="chart half-donuts" style="padding: 0rem;--step:60;--b:20px;--c: var(--spinner);--c2: #ddd;--value:60;">
+    <div class="charts mixed">
+      <div class="chart donuts donuts-thin" style="--step:60;--b:16px;--c: var(--spinner);">
+        <div class="spinner-block">
+          <div class="spinner"></div>
+          <div class="chart donuts donuts-thin" style="--step:90;--c:blue;">
             <div class="spinner-block">
-                <div class="spinner"></div>
-                <div class="valor">
-                    <span></span>
+              <div class="spinner"></div>
+              <div class="chart donuts donuts-thin" style="--step:48;--c:red;">
+                <div class="spinner-block">
+                  <div class="spinner"></div>
+                  <div class="chart donuts donuts-thin" style="--step:78;--c:rgb(54, 8, 8);">
+                    <div class="spinner-block">
+                      <div class="spinner"></div>
+                      <div class="chart donuts donuts-thin" style="--step:15;--c:rgb(77, 77, 77);">
+                        <div class="spinner-block">
+                          <div class="spinner"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
-        <div class="chart half-donuts" style="padding: 0rem;--step:30;--b:20px;--c: var(--spinner);--c2: #ddd;--value:30;">
-            <div class="spinner-block">
-                <div class="spinner"></div>
-                <div class="valor">
-                    <span></span>
-                </div>
-            </div>
-        </div>
-        <div class="chart half-donuts" style="padding: 0rem;--step:75;--b:20px;--c: var(--spinner);--c2: #ddd;--value:75;">
-            <div class="spinner-block">
-                <div class="spinner"></div>
-                <div class="valor">
-                    <span></span>
-                </div>
-            </div>
-        </div>
-        <div class="chart half-donuts split" style="padding: 0rem;--step:40;--b:20px;--c:var(--spinner);--c2:#ddd;--value:40;">
-            <div class="spinner-block">
-                <div class="spinner"></div>
-                <div class="valor">
-                    <span></span>
-                </div>
-            </div>
-            <div class="blocks">
-                <span>0-25</span>
-                <span>26-50</span>
-                <span>51-75</span>
-                <span>76-100</span>
-            </div>
-        </div>
-        <div class="chart donuts-fill" style="padding: 0em;--step:60;--b:10px;--c: var(--spinner);--value:60;">
-            <div class="spinner-block">
-                <div class="spinner"></div>
-                <div class="valor"><span>%</span></div>
-            </div>
-        </div>
-        <div class="chart donuts-fill" style="padding: 0em;--step:100;--b:10px;--c:var(--spinner);--value:100;" >
-            <div class="spinner-block">
-                <div class="spinner"></div>
-                <div class="valor"><span>%</span></div>
-            </div>
-        </div>
-        <div class="chart donuts-fill" style="padding: 0em;--step:20;--b:10px;--c:var(--spinner);--value:20;">
-            <div class="spinner-block">
-                <div class="spinner"></div>
-                <div class="valor"><span>%</span></div>
-            </div>
-        </div>
-        <div class="chart donuts-fill" style="padding: 0em;--step:15;--b:10px;--c:var(--spinner);--value:15;">
-            <div class="spinner-block">
-                <div class="spinner"></div>
-                <div class="valor"><span>%</span></div>
-            </div>
-        </div>
-        <div class="chart donuts-thin" style="padding: 0em;--step:60;--b:10px;--c: var(--spinner);--value:60;">
-            <div class="spinner-block">
-                <div class="spinner"></div>
-                <div class="valor"><span>%</span></div>
-            </div>
-        </div>
-        <div class="chart donuts-thin" style="padding: 0em;--step:88;--b:10px;--c:var(--spinner);--value:88;">
-            <div class="spinner-block">
-                <div class="spinner"></div>
-                <div class="valor"><span>%</span></div>
-            </div>
-        </div>
-        <div class="chart donuts-thin"  style="padding: 0em;--step:20;--b:10px;--c:var(--spinner);--value:20;">
-            <div class="spinner-block">
-                <div class="spinner"></div>
-                <div class="valor"><span>%</span></div>
-            </div>
-        </div>
-        <div class="chart donuts-thin" style="padding: 0em;--step:15;--b:10px;--c:var(--spinner);--value:15;">
-            <div class="spinner-block">
-                <div class="spinner"></div>
-                <div class="valor"><span>%</span></div>
-            </div>
-        </div>
+      </div>
     </div>
+    <div class="charts">
+      <div class="chart donuts half-donuts" style="padding: 0rem;--step:45;--b:10px;--c:red;--c2: #ddd;">
+        <div class="spinner-block">
+          <div class="spinner"></div>
+          <div class="chart donuts half-donuts" style="padding: 0rem;--step:85;--c: green;--c2: #ddd;">
+            <div class="spinner-block">
+              <div class="spinner"></div>
+              <div class="chart donuts half-donuts" style="padding: 0rem;--step:35;--c:orange;--c2: #ddd;">
+                <div class="spinner-block">
+                  <div class="spinner"></div>
+                  <div class="chart donuts half-donuts" style="padding: 0rem;--step:25;--c: pink;--c2: #ddd;">
+                    <div class="spinner-block">
+                      <div class="spinner"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </body>
 
