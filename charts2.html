@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charts</title>
-    <link rel="stylesheet" type="text/css" href="./style.css">
+    <title>Charts 2</title>
+    <link rel="stylesheet" type="text/css" href="./style2.css">
     <link rel="stylesheet" type="text/css" href="./global.css">
 
 </head>
@@ -20,71 +20,43 @@
         </ul>
     </div>
     <div class="grid">
-        <div class="chart straight" style="--step:6;--value:6;max-height: 35px;">
-            <div class="spinner-block">
-                <div class="spinner"></div>
-                <div class="valor">
-                    <span>%</span>
-                </div>
+        <div style="display:flex;position:relative;--step:90;max-height: 35px;">
+            <div style="background:#fda403;width:25%;">&nbsp;</div>
+            <div style="background:#e8751a;width:25%;">&nbsp;</div>
+            <div style="background:#c51350;width:25%;">&nbsp;</div>
+            <div style="background:#8a1253;width:25%;">&nbsp;</div>
+            <div style="position:absolute;top:0;bottom:0;left:0;width:100%;animation: step 1s .5s both;background:linear-gradient(90deg, rgb(0 0 0 / 20%) calc(var(--step)*1%), transparent 0);">
+            <p style="text-align:center">90%</p>
             </div>
-        </div>
-            <div class="chart straight" style="--step:16;--value:16;max-height: 35px;">
-                <div class="spinner-block">
-                    <div class="spinner"></div>
-                    <div class="valor">
-                        <span>%</span>
-                    </div>
-                </div>
+            
             </div>
-    <div class="chart straight" style="--step:30;--value:30;max-height: 35px;">
-        <div class="spinner-block">
-            <div class="spinner"></div>
-            <div class="valor">
-                <span>%</span>
+           <div style="max-height: 35px;position:relative;--step:75;--value:75;">
+        <div style="width: 100%;min-height: 35px;background:linear-gradient(90deg, #fda403,#e8751a,#c51350,#8a1253)"></div>
+        <div style="position:absolute;top:0;bottom:0;left:0;width:100%; animation: step 1s .5s both;background:linear-gradient(90deg, rgb(0 0 0 / 30%) calc(var(--step)*1%), transparent 0);">
+            <div class="spinner-value" style="position:absolute;top:50%;left:50%;color: #fff;transform: translate(-50%,-50%);">
+                <span></span>%
             </div>
         </div>
     </div>
-    <div class="chart straight split" style="--step:20;--value:20;max-height: 35px;">
-        <div class="spinner-block">
-            <div class="spinner"></div>
-            <div class="valor">
-                <span>%</span>
-            </div>
+    <div id="spinner-test" style="max-height: 35px;display: flex; flex-direction: column;justify-content: end;position:relative;--step:39;--value:39;">
+        <div style="height: 35px; width:100%; animation: step 1s .5s both;background:linear-gradient(90deg, rgb(118, 182, 118) calc(var(--step)*1%), #ddd 0);">
+            <div class="spinner-value" style="position:absolute;top:50%;left:50%;transform: translate(-50%,-50%);"><span></span>%</div>
+        </div>
+        <div style="width: 100%;height: 10px;background:linear-gradient(90deg, #fda403,#e8751a, #c51350,#8a1253)"></div>
+    </div>
+    <div style="max-height: 35px;position:relative;--step:59;--value:59;">
+        <div style="width: 100%;min-height: 35px;background:linear-gradient(90deg, #fda403 0, #fda403 25%,#e8751a 25%,#e8751a 50%, #c51350 50%,#c51350 75%, #8a1253 75%)"></div>
+        <div style="position:absolute;top:0;bottom:0;left:0;width:100%; animation: step 1s .5s both;background:linear-gradient(90deg, rgb(0 0 0 / 30%) calc(var(--step)*1%), transparent 0);">
+            <div class="spinner-value" style="position:absolute;top:50%;left:50%;color: #fff;transform: translate(-50%,-50%);"><span></span>%</div>
         </div>
     </div>
-    <div class="chart straight split" style="--step:80;--value:80;max-height: 35px;">
-        <div class="spinner-block">
-            <div class="spinner"></div>
-            <div class="valor">
-                <span>%</span>
-            </div>
+    <div style="max-height: 35px;display: flex; flex-direction: column;justify-content: end;position:relative;--step:39;--value:39;">
+        <div style="height: 35px; width:100%; animation: step 1s .5s both;background:linear-gradient(90deg, rgb(118, 182, 118) calc(var(--step)*1%), #ddd 0);">
+            <div class="spinner-value" style="position:absolute;top:50%;left:50%;color: #fff;transform: translate(-50%,-50%);"><span></span>%</div>
         </div>
+        <div style="width: 100%;height: 10px;background:linear-gradient(90deg, #fda403 0, #fda403 25%,#e8751a 25%,#e8751a 50%, #c51350 50%,#c51350 75%, #8a1253 75%)"></div>
     </div>
-    <div class="chart straight split pointer-chart" style="--step:60;--value:60;max-height: 35px;">
-        <div class="spinner-block">
-            <div class="spinner"></div>
-            <div class="valor">
-                <span>%</span>
-            </div>
-        </div>
-    </div>
-    <div class="chart straight split pointer-chart top" style="--step:60;--value:60;max-height: 35px;">
-        <div class="spinner-block">
-            <div class="spinner"></div>
-            <div class="valor">
-                <span>%</span>
-            </div>
-        </div>
-    </div>
-    <div class="chart straight split pointer-chart bottom" style="--step:60;--value:60;max-height: 35px;">
-        <div class="spinner-block">
-            <div class="spinner"></div>
-            <div class="valor">
-                <span>%</span>
-            </div>
-        </div>
-    </div>
-        <div class="chart half-donuts" style="padding: 0rem;--step:60;--b:20px;--c: var(--spinner);--c2: #ddd;--value:60;">
+        <div class="chart half-donuts" data-id="10" style="padding: 0rem;--step:60;--b:20px;--c: var(--spinner);--c2: #ddd;--value:60;">
             <div class="spinner-block">
                 <div class="spinner"></div>
                 <div class="valor">
@@ -92,7 +64,7 @@
                 </div>
             </div>
         </div>
-        <div class="chart half-donuts" style="padding: 0rem;--step:30;--b:20px;--c: var(--spinner);--c2: #ddd;--value:30;">
+        <div class="chart half-donuts" data-id="170" style="padding: 0rem;--step:30;--b:20px;--c: var(--spinner);--c2: #ddd;--value:30;">
             <div class="spinner-block">
                 <div class="spinner"></div>
                 <div class="valor">
@@ -100,7 +72,7 @@
                 </div>
             </div>
         </div>
-        <div class="chart half-donuts" style="padding: 0rem;--step:75;--b:20px;--c: var(--spinner);--c2: #ddd;--value:75;">
+        <div class="chart half-donuts" data-id="180" style="padding: 0rem;--step:75;--b:20px;--c: var(--spinner);--c2: #ddd;--value:75;">
             <div class="spinner-block">
                 <div class="spinner"></div>
                 <div class="valor">

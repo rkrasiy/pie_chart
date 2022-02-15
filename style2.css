@@ -17,12 +17,12 @@
 }
 /* .spinner-value span{--num: var(--step)} */
 
-.spinner-value span, .valor2 span{
+.spinner-value span, .valor span{
 
   animation: setValue  1s .5s linear;
   counter-set: value var(--value);
 }
-.spinner-value span:after, .valor2 span:before{
+.spinner-value span:after, .valor span:before{
   content: counter(value);
 }
 
@@ -35,47 +35,6 @@
   --spinner-1: rgb(49, 201, 145 / 30%) ;
   --grey: rgb(235 235 235);
 }
-  /*------------------------------------------
-            Circles
-  ------------------------------------------*/
-div#datos-unicos-circles,
-div#datos-unicos-circles-bordered{  display: flex;  justify-content: space-around;}
-.cirlces-block {  display: flex; flex-direction: column;  align-items: center;}
-  .circles {
-    --w:150px;
-    width: var(--w);
-    aspect-ratio: 1;
-    position: relative;
-    display: inline-grid;
-    place-content: center;
-    margin: 5px;
-    font-size: 25px;
-    font-weight: bold;
-    font-family: sans-serif;
-    animation: step 1s .5s both;
-  }
-  .circles-bordered:before {
-    content: "";
-    position: absolute;
-    border-radius: 50%;
-    inset: 0;
-    background: conic-gradient(var(--c) calc(var(--step)*1%),#0000 0);
-    -webkit-mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
-            mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
-  }
-  .circles-fill:before{
-    content: "";
-    position: absolute;
-    border-radius: 50%;
-    inset: 0;
-    background: conic-gradient(var(--c) calc(var(--step)*1%),#0000 0);
-  }
-
-  .circles span {
-    z-index: 6;
-  }
-
-
 
 .spinner-block,
 .spinner { position: relative;}
@@ -84,11 +43,10 @@ div#datos-unicos-circles-bordered{  display: flex;  justify-content: space-aroun
   display: flex;
   align-items: end;
   justify-content: center;
-  top: 50%;
+  bottom: 0;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 10%);
   position: absolute;
-  top: 50%;
   font-size: 20px;
 }
 
@@ -96,15 +54,49 @@ div#datos-unicos-circles-bordered{  display: flex;  justify-content: space-aroun
   content: "";
   position:absolute; 
 }
+
+  /*------------------------------------------
+            Circles
+  ------------------------------------------*/
+  .donuts-fill .spinner,
+  .donuts-thin .spinner {
+    --w: 100%;
+    width: var(--w);
+    aspect-ratio: 1;
+    position: relative;
+    display: inline-grid;
+    place-content: center;
+    animation: step 1s .5s both;
+  }
+
+  .donuts-thin .spinner:before {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    inset: 0;
+    background: conic-gradient(var(--c) calc(var(--step)*1%),#0000 0);
+    -webkit-mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+    mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+  }
+  .donuts-fill .spinner:before{
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    inset: 0;
+    background: conic-gradient(var(--c) calc(var(--step)*1%),#0000 0);
+  }
+  .donuts-fill .valor,
+  .donuts-thin .valor {
+    bottom: 50%;
+    transform: translate(-50%, 50%);
+  }
 /*-----------------------------
 
     Half-donuts
 ------------------------------*/
 .half-donuts .spinner-block{
-    --w: 150px;
-    margin-bottom: 1rem;
-    margin: 1rem auto;
-    height: calc((var(--w) / 2) + 5px);
+    --w: 100%;
+    height: 50%;
     overflow: hidden;
 }
 .half-donuts .spinner:after{
@@ -114,16 +106,14 @@ div#datos-unicos-circles-bordered{  display: flex;  justify-content: space-aroun
     -webkit-mask: radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
     mask: radial-gradient(farthest-side,#000 calc(99% - var(--b)),#000 calc(100% - var(--b)));  
 }
-
+.half-donuts {
+  aspect-ratio: 1;
+}
 .half-donuts .spinner {
     width: var(--w);
     aspect-ratio: 1;
     display: inline-grid;
     place-content: center;
-    margin: 5px;
-    font-size: 25px;
-    font-weight: bold;
-    font-family: sans-serif;
     transform: rotate(-90deg);
     animation: step 1s .5s both;
     position: absolute;
@@ -133,26 +123,32 @@ div#datos-unicos-circles-bordered{  display: flex;  justify-content: space-aroun
 }
 
 .half-donuts.split .spinner:after{
-    background: conic-gradient(var(--c) calc((var(--step) / 2 )*1%), var(--color-1) 0%, var(--color-1) 12.5%, var(--color-2) 12.5%,var(--color-2) 25%, var(--color-3) 25%, var(--color-3) 37.5%, var(--color-4), 37.5%, var(--color-4) 50% );
+    background: conic-gradient(var(--c) calc((var(--step) / 2 )*1%), var(--color-1) 0%, var(--color-1) 12.5%, var(--color-2) 12.5%,var(--color-2) 25%, var(--color-3) 25%, var(--color-3) 37.5%, var(--color-4), 37.5%, var(--color-4) 50%, var(--spinner) 52% );
     -webkit-mask: radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
     mask: radial-gradient(farthest-side,#000 calc(99% - var(--b)),#000 calc(100% - var(--b)));  
 }
 
+.half-donuts.split {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 /*4 - blocks*/
 .blocks span {
-    padding: 1px 5px;
     font-size: 14px;
     font-family: 'Open Sans', sans-serif;
-    border-radius: 2px;
     color: #fff;
+    flex: 0 0 25%;
+    text-align: center;
 }
-.blocks span:not(:first-child){margin-left: 2px;}
   
-.blocks span:nth-child(1) {background: var(--color-1);}
-.blocks span:nth-child(2) { background: var(--color-2); color: #000;}
-.blocks span:nth-child(3) {  background: var(--color-3);  color: #000;}
-.blocks span:nth-child(4){  background: var(--color-4);}
-
+.blocks span:nth-child(2) {color: #000;}
+.blocks span:nth-child(3) {color: #000;}
+.blocks {
+  display: flex;
+  background: linear-gradient(90deg, var(--color-1) 0%,var(--color-1) 25%,var(--color-2) 25%,var(--color-2) 50%,var(--color-3) 50%,var(--color-3) 75%,var(--color-4) 75%,var(--color-4) 100%);
+}
 
 /*------------------------
 		Linear
@@ -162,7 +158,7 @@ div#datos-unicos-circles-bordered{  display: flex;  justify-content: space-aroun
   min-height: 35px;
   background: #ddd;
 }
-.linear-spinner.split .spinner {
+.linear-spinner.split .spinner{
   background: linear-gradient(90deg, var(--color-1) 0%,var(--color-1) 25%,var(--color-2) 25%,var(--color-2) 50%,var(--color-3) 50%,var(--color-3) 75%,var(--color-4) 75%,var(--color-4) 100%);
 }
 

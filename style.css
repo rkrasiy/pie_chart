@@ -1,180 +1,209 @@
-#datos-unicos {display: flex;    justify-content: center; align-items: center;}
-#datos-unicos .datos-unicos-block {
-    padding: 1rem;
-    margin: .5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+@property --step{
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 0;
 }
+@property --value {
+  syntax: '<integer>';
+  initial-value: 0;
+  inherits: true;
+}
+
+@keyframes step {
+  from {--step: 0; }
+}
+@keyframes setValue {
+  from {--value: 0; }
+}
+/* .spinner-value span{--num: var(--step)} */
+
+.spinner-value span, .valor span{
+
+  animation: setValue  1s .5s linear;
+  counter-set: value var(--value);
+}
+.spinner-value span:after, .valor span:before{
+  content: counter(value);
+}
+
 :root{
   --color-1: rgb(247 197 196);
   --color-2: rgb(240 143 143) ;
   --color-3: rgb(115 228 240) ;
   --color-4: rgb(48 119 201);
-  --spinner: #30c991 ;
+  --spinner: rgb(49, 201, 145) ;
+  --spinner-1: rgb(49, 201, 145 / 30%) ;
   --grey: rgb(235 235 235);
 }
+
+.spinner-block,
+.spinner { position: relative;}
+.valor{
+  z-index: 2;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 10%);
+  position: absolute;
+  font-size: 20px;
+}
+
+.spinner:after {
+  content: "";
+  position:absolute; 
+}
+
   /*------------------------------------------
             Circles
   ------------------------------------------*/
-div#datos-unicos-circles,
-div#datos-unicos-circles-bordered{  display: flex;  justify-content: space-around;}
-.cirlces-block {  display: flex; flex-direction: column;  align-items: center;}
-  .circles {
-    --w:150px;
+  .donuts-fill .spinner,
+  .donuts-thin .spinner {
+    --w: 100%;
     width: var(--w);
     aspect-ratio: 1;
     position: relative;
     display: inline-grid;
     place-content: center;
-    margin: 5px;
-    font-size: 25px;
-    font-weight: bold;
-    font-family: sans-serif;
-    animation:p 1s .5s both;
-  }
-  .circles-bordered:before {
-    content: "";
-    position: absolute;
-    border-radius: 50%;
-    inset: 0;
-    background: conic-gradient(var(--c) calc(var(--p)*1%),#0000 0);
-    -webkit-mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
-            mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
-  }
-  .circles-fill:before{
-    content: "";
-    position: absolute;
-    border-radius: 50%;
-    inset: 0;
-    background: conic-gradient(var(--c) calc(var(--p)*1%),#0000 0);
+    animation: step 1s .5s both;
   }
 
-  .circles span {
-    z-index: 6;
+  .donuts-thin .spinner:before {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    inset: 0;
+    background: conic-gradient(var(--c) calc(var(--step)*1%),#0000 0);
+    -webkit-mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+    mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
   }
-@property --p{
-  syntax: '<number>';
-  inherits: true;
-  initial-value: 0;
-}
-@keyframes p {
-  from {--p:0}
-}
+  .donuts-fill .spinner:before{
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    inset: 0;
+    background: conic-gradient(var(--c) calc(var(--step)*1%),#0000 0);
+  }
+  .donuts-fill .valor,
+  .donuts-thin .valor {
+    bottom: 50%;
+    transform: translate(-50%, 50%);
+  }
 /*-----------------------------
 
     Half-donuts
 ------------------------------*/
-/* .half-donuts .spinner-block { border-radius: 200px 200px  0 0;} */
 .half-donuts .spinner-block{
-    --w: 150px;
-    margin-bottom: 1rem;
-    position: relative;
-    margin: 1rem auto;
-    height: calc((var(--w) / 2) + 5px);
+    --w: 100%;
+    height: 50%;
     overflow: hidden;
 }
 .half-donuts .spinner:after{
-    content: "";
-    position: absolute;
     border-radius: 50%;
     inset: 0;
-    background: conic-gradient(var(--c) calc((var(--p) / 2 )*1%), var(--c2) 0);
+    background: conic-gradient(var(--c) calc((var(--step) / 2 )* 1%), var(--c2) 0);
     -webkit-mask: radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
     mask: radial-gradient(farthest-side,#000 calc(99% - var(--b)),#000 calc(100% - var(--b)));  
 }
-
+.half-donuts {
+  aspect-ratio: 1;
+}
 .half-donuts .spinner {
     width: var(--w);
     aspect-ratio: 1;
-    position: relative;
     display: inline-grid;
     place-content: center;
-    margin: 5px;
-    font-size: 25px;
-    font-weight: bold;
-    font-family: sans-serif;
     transform: rotate(-90deg);
-    animation:p 1s .5s both;
+    animation: step 1s .5s both;
+    position: absolute;
 }
 .half-donuts .valor{
-    z-index: 2;
-    display: flex;
-    align-items: end;
-    justify-content: center;
-    position: absolute;
     top: calc(var(--w) / 2);
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
-.half-donuts.frustrated .spinner:after{
-    background: conic-gradient(var(--c) calc((var(--p) / 2 )*1%), var(--color-1) 0%, var(--color-1) 12.5%, var(--color-2) 12.5%,var(--color-2) 25%, var(--color-3) 25%, var(--color-3) 37.5%, var(--color-4), 37.5%, var(--color-4) 50% );
+.half-donuts.split .spinner:after{
+    background: conic-gradient(var(--c) calc((var(--step) / 2 )*1%), var(--color-1) 0%, var(--color-1) 12.5%, var(--color-2) 12.5%,var(--color-2) 25%, var(--color-3) 25%, var(--color-3) 37.5%, var(--color-4), 37.5%, var(--color-4) 50%, var(--spinner) 52% );
     -webkit-mask: radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
     mask: radial-gradient(farthest-side,#000 calc(99% - var(--b)),#000 calc(100% - var(--b)));  
 }
 
-/*------------------------
-    4 - blocks
-------------------------*/
+.half-donuts.split {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/*4 - blocks*/
 .blocks span {
-    padding: 1px 5px;
     font-size: 14px;
     font-family: 'Open Sans', sans-serif;
-    border-radius: 2px;
     color: #fff;
+    flex: 0 0 25%;
+    text-align: center;
 }
-.blocks span:not(:first-child){margin-left: 2px;}
   
-.blocks span:nth-child(1) {background: var(--color-1);}
-.blocks span:nth-child(2) { background: var(--color-2); color: #000;}
-.blocks span:nth-child(3) {  background: var(--color-3);  color: #000;}
-.blocks span:nth-child(4){  background: var(--color-4);}
-
-
-
-
-/* GORIZONTAL */
-#datos-unicos-gorizontal .blocks span{margin: 0;background: none;}
-#datos-unicos-gorizontal .blocks{
+.blocks span:nth-child(2) {color: #000;}
+.blocks span:nth-child(3) {color: #000;}
+.blocks {
   display: flex;
-  justify-content: space-around;
-  height: 100%;
-  align-items: center;
-}
-#gorizontal-grafico4 .grafico-vertical {
-    background: linear-gradient(90deg, var(--color-1) 0%, var(--color-1) 25%,var(--color-2) 25%,var(--color-2) 50%,var(--color-3) 50%,var(--color-3) 75%,var(--color-4) 75%);
-}
-#datos-unicos-gorizontal  .grafico-vertical{  position: relative;}
-#datos-unicos-gorizontal .spinner {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-  	width: 0;
-  	animation: spinRight .75s ease-out forwards 1s;
-    background: var(--spinner);
-}
-#datos-unicos-gorizontal .grafico-vertical {
-    height: 40px;
-    padding: 0!important;
-}
-#datos-unicos-gorizontal .valor {
-    z-index: 10;
-    position: relative;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 22px;
+  background: linear-gradient(90deg, var(--color-1) 0%,var(--color-1) 25%,var(--color-2) 25%,var(--color-2) 50%,var(--color-3) 50%,var(--color-3) 75%,var(--color-4) 75%,var(--color-4) 100%);
 }
 
-#datos-unicos-gorizontal .grafico-vertical {
-    background: var(--grey);
+/*------------------------
+		Linear
+-------------------------*/
+.chart.straight .spinner {
+  width: 100%;
+  min-height: 35px;
+  background: #ddd;
 }
-@keyframes spinRight{
-    100%{width: calc(var(--number) * 1%);}
+.chart.straight.split .spinner{
+  background: linear-gradient(90deg, var(--color-1) 0%,var(--color-1) 25%,var(--color-2) 25%,var(--color-2) 50%,var(--color-3) 50%,var(--color-3) 75%,var(--color-4) 75%,var(--color-4) 100%);
 }
-@keyframes roteCircle{
-    100%{transform: rotate(calc( -90deg + (var(--number, 0) * 1.8deg)));}
+
+.chart.straight .spinner:after {
+  background: linear-gradient(90deg, var(--spinner) calc(var(--step)*1%), transparent 0);
+  top: 0;
+  left:0;
+  bottom:0;
+  width: 100%;
+  animation: step 1s .5s both;
+  position: absolute;
+  z-index: 2;
 }
+
+.pointer-chart .spinner:before {
+  background: #000;
+  top: 0;
+  left: calc(var(--step)*1%);
+  bottom:0;
+  width: 3px;transform: translate(-50%, 0);
+  animation: step 1s .5s both;
+  position: absolute;
+  z-index: 3;
+  content: "";
+}
+.pointer-chart.top .spinner:before {
+top: -9px;
+    bottom: unset;
+    height: 7px;
+    width: 7px;
+    background-color: transparent;
+    border-left: 1px solid #000;
+    border-bottom: 1px solid #000;
+    transform: rotate(
+-45deg) translate(-30%,-50%);
+}
+.pointer-chart.bottom .spinner:before {
+  bottom: -7px;
+  top: unset;
+  height: 7px;
+  width: 7px;
+  background-color: transparent;
+  border-left: 1px solid #000;
+  border-bottom: 1px solid #000;
+  transform: rotate( 
+135deg) translate(72%, 0%);
+  }
+.chart.straight .valor{bottom: 50%;  transform: translate(-50%,50%);}
