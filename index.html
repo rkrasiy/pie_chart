@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Charts</title>
-    <link rel="stylesheet" type="text/css" href="./datos-unicos.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
 <style>
     .grid {display: flex;flex-direction: row;flex-wrap: wrap;    max-width: 1200px;
     margin: 0 auto;}
@@ -18,41 +18,41 @@
 
 <body id="main">
     <div class="grid">
-        <div class="chart straight" style="--step:36;--value:36;max-height: 35px;">
+        <div class="chart straight group" style="--step:36;--value:36;max-height: 35px;">
             <div class="spinner-block">
-                <div class="spinner"></div>
+                <div class="spinner group-hover:bg-blue"></div>
                 <div class="valor">
                     <span>%</span>
                 </div>
             </div>
         </div>
-        <div class="chart straight split" style="--step:20;--value:20;max-height: 35px;">
+        <div class="chart straight split group" style="--step:20;--value:20;max-height: 35px;">
             <div class="spinner-block">
-                <div class="spinner"></div>
+                <div class="spinner group-hover:bg-red"></div>
                 <div class="valor">
                     <span>%</span>
                 </div>
             </div>
         </div>
-        <div class="chart straight split pointer-chart" style="--step:60;--value:60;max-height: 35px;">
+        <div class="chart straight split pointer-chart group" style="--step:60;--value:60;max-height: 35px;">
             <div class="spinner-block">
-                <div class="spinner"></div>
+                <div class="spinner group-hover:bg-blue"></div>
                 <div class="valor">
                     <span>%</span>
                 </div>
             </div>
         </div>
-        <div class="chart straight split pointer-chart top" style="--step:60;--value:60;max-height: 35px;">
+        <div class="chart straight split pointer-chart top group" style="--step:60;--value:60;max-height: 35px;">
             <div class="spinner-block">
-                <div class="spinner"></div>
+                <div class="spinner group-hover:bg-green"></div>
                 <div class="valor">
                     <span>%</span>
                 </div>
             </div>
         </div>
-        <div class="chart straight split pointer-chart bottom" style="--step:60;--value:60;max-height: 35px;">
+        <div class="chart straight split pointer-chart bottom group" style="--step:60;--value:60;max-height: 35px;">
             <div class="spinner-block">
-                <div class="spinner"></div>
+                <div class="spinner group-hover:bg-yellow"></div>
                 <div class="valor">
                     <span>%</span>
                 </div>
@@ -158,23 +158,23 @@
               </div>
             </div>
           </div>
-        <div class="charts half">
+        <div class="charts half hover:scale">
             <div class="chart donuts half-donuts" style="padding: 0rem;--step:45;--value:45;--b:20px;--c:red;--c2: #ddd;">
               <div class="spinner-block">
-                <div class="spinner"></div>
-                <div class="valor"><span></span>%</div>
+                <div class="spinner group hover:opacity"></div>
+                <div class="valor hidden group-hover:block"><span></span>%</div>
                 <div class="chart donuts half-donuts" style="padding: 0rem;--step:85;--value:85;--c: green;--c2: #ddd;">
                   <div class="spinner-block">
-                    <div class="spinner"></div>
-                    <div class="valor"><span></span>%</div>
+                    <div class="spinner group hover:opacity"></div>
+                    <div class="valor hidden group-hover:block"><span></span>%</div>
                     <div class="chart donuts half-donuts" style="padding: 0rem;--step:35;--value:35;--c:orange;--c2: #ddd;">
                       <div class="spinner-block">
-                        <div class="spinner"></div>
-                        <div class="valor"><span></span>%</div>
+                        <div class="spinner group hover:opacity"></div>
+                        <div class="valor hidden group-hover:block"><span></span>%</div>
                         <div class="chart donuts half-donuts" style="padding: 0rem;--step:25;--value:25;--c: pink;--c2: #ddd;">
                           <div class="spinner-block">
-                            <div class="spinner"></div>
-                            <div class="valor"><span></span>%</div>
+                            <div class="spinner group hover:opacity"></div>
+                            <div class="valor hidden group-hover:block"><span></span>%</div>
                           </div>
                         </div>
                       </div>
@@ -185,7 +185,73 @@
             </div>
           </div>
     </div>
-        <div class="area-chart">
+
+        <div class="grid"><div class="chart bars efect-3d">
+            <div class="bar-block" style="--step:15;--value:15">
+                <div class="bar"></div>
+                <div class="valor"><span></span></div>
+            </div>
+            <div class="bar-block" style="--step:55;--value:55">
+                <div class="bar"></div>
+                <div class="valor"><span></span></div>
+            </div>
+            <div class="bar-block" style="--step:85;--value:85">
+                <div class="bar"></div>
+                <div class="valor"><span></span></div>
+            </div>
+            <div class="bar-block" style="--step:22;--value:22">
+                <div class="bar"></div>
+                <div class="valor"><span></span></div>
+            </div>
+            <div class="bar-block" style="--step:5;--value:5">
+                <div class="bar"></div>
+                <div class="valor"><span></span></div>
+            </div>
+        </div>
+
+        <div class="chart bars efect-3d vertical">
+            <div class="bar-block" style="--step:15;">
+                <div class="bar"></div>
+            </div>
+            <div class="bar-block" style="--step:55;">
+                <div class="bar"></div>
+            </div>
+            <div class="bar-block" style="--step:85;">
+                <div class="bar"></div>
+            </div>
+            <div class="bar-block" style="--step:22;">
+                <div class="bar"></div>
+            </div>
+            <div class="bar-block" style="--step:5;">
+                <div class="bar"></div>
+            </div>
+        </div>
+
+        <div class="chart bars efect-3d vertical">
+            <div class="bar-block" style="--step:15;--value:15">
+                <div class="bar"></div>
+                <div class="valor"><span></span></div>
+            </div>
+            <div class="bar-block" style="--step:55;--value:55">
+                <div class="bar"></div>
+                <div class="valor"><span></span></div>
+            </div>
+            <div class="bar-block" style="--step:85;--value:85">
+                <div class="bar"></div>
+                <div class="valor"><span></span></div>
+            </div>
+            <div class="bar-block" style="--step:22;--value:22">
+                <div class="bar"></div>
+                <div class="valor"><span></span></div>
+            </div>
+            <div class="bar-block" style="--step:5;--value:5">
+                <div class="bar"></div>
+                <div class="valor"><span></span></div>
+            </div>
+        </div>
+    </div>
+
+        <div class="area-chart hover:bg-yellow">
             <div class="area-poligon" style="--start: 10; --end: 40;">
                 <div class="poligon"></div>
                 <div class="valor"><span>40</span></div>
@@ -300,7 +366,7 @@
                 <div class="valor"><span>54</span></div>
             </div>
         </div>
-       </div>
+    </div>
 </body>
 
 </html>

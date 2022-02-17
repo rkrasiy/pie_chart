@@ -32,12 +32,14 @@
 /* .spinner-value span{--num: var(--step)} */
 
 .spinner-value span,
-.spinner-block .valor span{
+.spinner-block .valor span,
+.bars .valor span{
   animation: setValue  1s .5s linear;
   counter-set: value var(--value);
 }
 .spinner-value span:after,
-.spinner-block .valor span:before{
+.spinner-block .valor span:before,
+.bars .valor span:after{
   content: counter(value);
 }
 
@@ -224,6 +226,10 @@
   transform: rotate(0deg);
 }
 
+hover:hover\:class {
+  column-span: ;
+}
+
 .charts .donuts-thin .spinner-block .chart {
   position: absolute;
   top: 50%;
@@ -242,14 +248,6 @@
   transform: translate(-50%, -50%);
 }
 
-.charts .half-donuts .spinner{cursor: pointer;opacity: 1;}
-.charts .half-donuts .spinner:hover { opacity: .6;}
-.charts .chart .valor{
-  visibility: hidden;
-}
-.charts .spinner:hover + .valor {
-  visibility: visible;
-}
 /*---------------------------------
       Area Chart
 ---------------------------------*/
@@ -282,6 +280,7 @@
 .charts .area-chart {
   position: absolute;
 }
+
 /*POLIGON*/
 .area-chart.linear .area-poligon {
   /* Dimensions */
@@ -303,3 +302,115 @@
   bottom: calc(var(--end) * 1%);
   transform: translateX(50%);
 }
+
+/*-------------------------------
+      BAR
+-------------------------------*/
+
+.chart.bars {
+  width: 100%;
+}
+
+.bars:not(.vertical) .bar {
+  animation: step 1s .5s both;
+  width: calc(var(--step)*1%);
+  min-height: 35px;
+  background: rgb(97, 160, 212);
+}
+.bars:not(.vertical) .bar-block{margin-bottom: 1rem;}
+.bar-block{position: relative;}
+.efect-3d .bar{
+  position: relative;
+  --bg: rgb(97 160 212);
+}
+.efect-3d .bar:after,
+.efect-3d .bar:before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 9px;
+  background: var(--bg);
+  transform: skewX(45deg);
+}
+
+.efect-3d .bar:after {
+  right: -9px;
+  top: 4px;
+  width: 9px;
+  height: 100%;
+  transform: skewY(45deg);
+  opacity: .5;
+}
+
+.efect-3d .bar:before {
+  left: 5px;
+  bottom: -9px;  
+  opacity: .7;
+}
+.bars:not(.vertical) .bar-block .valor{transform: translate(50%, 0);min-width: 25px;}
+.bars:not(.vertical) .bar-block .valor{ animation: step 1s .5s both;left: calc(var(--step)*1%);}
+/*VERTICAL*/
+.bars.vertical {
+  display: flex;
+  flex-direction: row;
+  min-height: 300px;
+  align-items: flex-end;
+}
+.bars.vertical > div{
+  animation: step 1s .5s both;
+  height: calc(var(--step)*1px);
+  min-width: 35px;
+  background: rgb(97, 160, 212);
+  margin-left: 2rem;
+}
+.bars.vertical.efect-3d .bar:after,
+.bars.vertical.efect-3d .bar:before{
+  transform: skewX(-45deg);
+}
+.bars.vertical.efect-3d .bar:before{
+  bottom: unset;
+  top: -9px;
+}
+.bars.vertical.efect-3d .bar:after{
+  right: -9px;
+  z-index: 123;
+  bottom: 0;
+  top: -4px;
+  height: calc(var(--step) * 1px);
+  transform: skewY(-45deg);
+}
+.bars.vertical .bar-block .valor{
+  transform: translate(-50%, -50%);
+}
+.bars.vertical .bar-block .valor{ 
+  animation: step 1s .5s both;
+  bottom: calc(var(--step)*1px);}
+
+/*-------------------------------
+      HOVER
+-------------------------------*/
+
+[class*='hover']{cursor: pointer;}
+.hover\:scale:hover{transform: scale(1.05);}
+
+/*COLORS*/
+.hover\:bg-blue:hover,
+.group:hover .group-hover\:bg-blue {background: rgb(59, 121, 163) !important;}
+.hover\:bg-red:hover,
+.group:hover .group-hover\:bg-red {background: rgb(255 135 135)!important;}
+.hover\:bg-green:hover,
+.group:hover .group-hover\:bg-green {background: rgb(120, 212, 124)!important;}
+.hover\:bg-yellow:hover,
+.group:hover .group-hover\:bg-yellow {background: rgb(200, 202, 74)!important;}
+
+/*OPACITY*/
+.hover\:opacity:hover{opacity: .6;}
+
+/*VISIBILITY*/
+.hover\:block:hover,
+.group:hover + .group-hover\:block{visibility: visible;}
+
+
+.hidden { visibility: hidden;}
+
+
